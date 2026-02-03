@@ -1,53 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>加载中</title>
-    <style>
-        *{
-            margin:0;border:0;padding:0;
-        }
-        html{
-            height: 100%;
-        }
-        body{
-            background:#282a36;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .loading {
-             background: url("loading.png")
-             no-repeat;
-             width: 160px;
-             height: 160px;
-         }
-
-    </style>
-</head>
-<body>
-<div class="loading"></div>
-<script>
-    document.addEventListener( "DOMContentLoaded", function(){
-        var times = 0;
-        setInterval(() => {
-            if (times > 25) {
-                times = 0;
-            }
-            var x;
-            var y = 0;
-            x = times % 13;
-            if (times > 12) {
-                y = 1;
-            }
-            times++;
-            x = -x * 160;
-            y = -y * 160;
-            document.querySelector('.loading').style.backgroundPositionX = x+"px";
-            document.querySelector('.loading').style.backgroundPositionY = y+"px";
-        }, 60);
-    });
-</script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Import Question</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner-gif">
+        <img id="banner" src="./public/images/mid.gif" alt="banner" />
+      </div>
+      <h1 id="question-heading">Will you be my valentine?</h1>
+      <div class="buttons">
+        <button id="yes-button"><p>Yes</p></button>
+        <button id="no-button"><p>No</p></button>
+      </div>
+      <div class="message">
+        <h2 id="success-message">Yepppie, see you sooonnn :3</h2>
+        
+        <h6>Creator: <a class="creator" href="https://github.com/Aayush-683">Aayush683 ;)</a></h6>
+      </div>
+      <div class="language-selector">
+        <label for="language-select">Choose Language:</label>
+        <select id="language-select" onchange="changeLanguage()">
+          <option value="english">English</option>
+          <option value="french">French</option>
+          <option value="thai">แบบไทย</option>
+        </select>
+      </div>
+    </div>
+    <script src="./public/js/script.js"></script>
+  </body>
 </html>
