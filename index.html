@@ -1,101 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Fun Page</title>
-<style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-
-    body {
-        background:#282a36;
-        font-family: Arial, sans-serif;
-        color:white;
-        height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        overflow:hidden;
-        flex-direction:column;
-    }
-
-    /* SIMPLE LOADER */
-    #loader {
-        width: 120px;
-        height: 120px;
-        border: 14px solid #444;
-        border-top-color: #fff;
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
-
-    /* MAIN CONTENT (hidden at first) */
-    #main {
-        display:none;
-        text-align:center;
-    }
-
-    button {
-        padding: 10px 25px;
-        font-size: 20px;
-        border:none;
-        border-radius: 10px;
-        cursor:pointer;
-        margin:10px;
-    }
-
-    #yes {
-        background:#4CAF50;
-        color:white;
-    }
-
-    #no {
-        background:#FF4747;
-        color:white;
-        position:absolute;
-    }
-</style>
-</head>
-<body>
-
-<!-- LOADING ANIMATION -->
-<div id="loader"></div>
-
-<!-- MAIN CONTENT -->
-<div id="main">
-    <h1>Do you like this website?</h1>
-    <button id="yes">Yes</button>
-    <button id="no">No</button>
-</div>
-
-<script>
-    // SHOW MAIN AFTER LOADING
-    setTimeout(() => {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("main").style.display = "block";
-    }, 2000);
-
-    // RUNNING "NO" BUTTON
-    const noBtn = document.getElementById("no");
-
-    noBtn.addEventListener("mouseover", () => {
-        const maxX = window.innerWidth - noBtn.clientWidth;
-        const maxY = window.innerHeight - noBtn.clientHeight;
-
-        const newX = Math.random() * maxX;
-        const newY = Math.random() * maxY;
-
-        noBtn.style.left = newX + "px";
-        noBtn.style.top  = newY + "px";
-    });
-
-    // YES BUTTON
-    document.getElementById("yes").addEventListener("click", () => {
-        alert("Yay! 😄 Thank you!");
-    });
-</script>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Import Question</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner-gif">
+        <img id="banner" src="./public/images/mid.gif" alt="banner" />
+      </div>
+      <h1 id="question-heading">Will you be my valentine?</h1>
+      <div class="buttons">
+        <button id="yes-button"><p>Yes</p></button>
+        <button id="no-button"><p>No</p></button>
+      </div>
+      <div class="message">
+        <h2 id="success-message">Yepppie, see you sooonnn :3</h2>
+        
+        <h6>Creator: <a class="creator" href="https://github.com/Aayush-683">Aayush683 ;)</a></h6>
+      </div>
+      <div class="language-selector">
+        <label for="language-select">Choose Language:</label>
+        <select id="language-select" onchange="changeLanguage()">
+          <option value="english">English</option>
+          <option value="french">French</option>
+          <option value="thai">แบบไทย</option>
+        </select>
+      </div>
+    </div>
+    <script src="./public/js/script.js"></script>
+  </body>
 </html>
